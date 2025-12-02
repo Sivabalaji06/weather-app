@@ -1,126 +1,91 @@
-/* styles.css - Gradient Weather Card */
-
-:root{
-  --card-radius: 16px;
-  --card-padding: 28px;
-  --shadow: 0 18px 40px rgba(3, 10, 24, 0.12);
-  --muted: #5b6b74;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #93d4ea, #90e6e3);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* page background */
-.page-bg {
-  background: linear-gradient(180deg, #f3f7fb 0%, #ffffff 40%);
-  min-height: 100vh;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color: #0b2b3a;
+.container {
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
 }
 
-/* centered weather card */
+.title {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.search-box input {
+    width: 65%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 10px 15px;
+    border: none;
+    background: #fff;
+    color: #333;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.error {
+    margin-top: 20px;
+    padding: 10px;
+    background: #ff4d4d;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
 .weather-card {
-  width: 85%;
-  max-width: 1000px;
-  margin-top: 18px;
-  border-radius: var(--card-radius);
-  padding: var(--card-padding);
-  box-shadow: var(--shadow);
-  color: white;
-  transition: transform .25s ease, box-shadow .25s ease;
-  overflow: hidden;
-  border: 0;
+    margin-top: 25px;
+    background: rgba(96, 85, 85, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    color: white;
+    animation: fadeIn 0.6s ease;
 }
 
-/* hover lift */
-.weather-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 30px 60px rgba(3,10,24,0.16);
+.weather-icon img {
+    width: 120px;
 }
 
-/* top row layout */
-.weather-top {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* city title */
-.city {
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: -0.6px;
-}
-
-/* weather icon */
-.weather-icon {
-  width: 94px;
-  height: 94px;
-  display: block;
-  margin: 0 auto 6px;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.12));
-}
-
-/* temp */
 .temp {
-  font-size: 2.6rem;
-  line-height: 1;
+    font-size: 42px;
+    margin: 10px 0;
+    font-weight: bold;
 }
 
-/* stats row */
-.weather-stats {
-  color: rgba(255,255,255,0.95);
-  margin-top: 8px;
-  font-size: 1rem;
+.desc {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
-/* thin separator */
-.weather-card hr {
-  border-top: 1px solid rgba(255,255,255,0.15);
-  margin: 18px 0;
+.details {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 10px;
 }
 
-/* variant gradients */
-/* Clear sky (sunny) - warm gold */
-.weather-clear {
-  background: linear-gradient(135deg, #56CCF2 0%, #2F80ED 50%, #F6D365 100%);
-}
-
-/* Clouds - soft blue-gray */
-.weather-clouds {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #89d4cf 100%);
-}
-
-/* Rain - deep cool blue */
-.weather-rain {
-  background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
-}
-
-/* Drizzle - subtle blue */
-.weather-drizzle {
-  background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
-}
-
-/* Snow - cool white/blue */
-.weather-snow {
-  background: linear-gradient(135deg, #e0f7ff 0%, #c2e9fb 50%, #89c2ff 100%);
-  color: #08334a;
-}
-
-/* Thunderstorm - dramatic */
-.weather-thunder {
-  background: linear-gradient(135deg, #141e30 0%, #243b55 50%, #0f0c29 100%);
-}
-
-/* default fallback */
-.weather-default {
-  background: linear-gradient(135deg,#6a11cb 0%,#2575fc 100%);
-}
-
-/* responsive adjustments */
-@media (max-width: 768px){
-  .weather-card { width: 94%; padding: 20px; }
-  .weather-top { flex-direction: column-reverse; text-align: center; gap: 8px;}
-  .left { order: 2; }
-  .right { order: 1; }
-  .temp { font-size: 2rem; }
-  .city { font-size: 1.5rem; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

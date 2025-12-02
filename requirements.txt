@@ -128,7 +128,6 @@ six==1.17.0
 sniffio==1.3.1
 soupsieve==2.7
 SQLAlchemy==2.0.40
-sqlplus==2.6.5
 stack-data==0.6.3
 statsmodels==0.14.5
 tabulate==0.9.0
